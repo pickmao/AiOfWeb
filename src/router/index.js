@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
 import LoginPage from '../components/Login.vue'
 import Blog from '../components/Blog.vue'
+import LangChainPractice from '../views/LangChainPractice.vue'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/blog',
     name: 'Blog',
     component: Blog
+  },
+  {
+    path: '/blog/:id',
+    name: 'BlogDetail',
+    component: LangChainPractice
   }
 ]
 

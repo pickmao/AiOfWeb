@@ -19,7 +19,7 @@
     </nav>
 
     <!-- 博客列表 -->
-    <div class="blog-grid">
+    <div class="blog-grid" :data-category="currentCategory">
       <article 
         v-for="post in filteredPosts" 
         :key="post.id" 
@@ -40,7 +40,7 @@
           <div class="tags">
             <span v-for="tag in post.tags" :key="tag" class="tag">{{ tag }}</span>
           </div>
-          <router-link :to="'/blog/' + post.id" class="read-more">
+          <router-link :to="{ name: 'BlogDetail', params: { id: post.id } }" class="read-more">
             阅读更多
           </router-link>
         </div>
@@ -68,7 +68,7 @@ export default {
           category: 'langchain',
           date: '2025-01-10',
           readTime: 15,
-          image: 'https://via.placeholder.com/400x250',
+          image: '/src/assets/blog/langchain.png',
           excerpt: '探索如何使用 LangChain 框架构建高级对话系统，包括上下文管理和记忆机制的实现。',
           tags: ['LangChain', 'LLM', '对话系统', 'Python'],
         },
@@ -78,7 +78,7 @@ export default {
           category: 'rag',
           date: '2025-01-08',
           readTime: 12,
-          image: 'https://via.placeholder.com/400x250',
+          image: '/src/assets/blog/graphrag.png',
           excerpt: '深入探讨检索增强生成(RAG)系统的优化技巧，提高响应质量和准确性。',
           tags: ['RAG', '知识库', '向量检索', 'Embedding'],
         },
@@ -88,7 +88,7 @@ export default {
           category: 'stable-diffusion',
           date: '2025-01-05',
           readTime: 20,
-          image: 'https://via.placeholder.com/400x250',
+          image: '/src/assets/blog/stablediffusion.png',
           excerpt: '分享 Stable Diffusion 模型微调的实践经验，包括 LoRA 训练和提示词工程。',
           tags: ['Stable Diffusion', 'LoRA', '模型微调', 'AI绘画'],
         },
@@ -195,6 +195,16 @@ export default {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+}
+
+.blog-grid[data-category='langchain'] {
+  background-image: url('@/assets/blog/langchain.png');
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-blend-mode: soft-light;
+  background-attachment: fixed;
 }
 
 .blog-card {
