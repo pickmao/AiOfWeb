@@ -3,24 +3,22 @@
     <!-- Navigation Bar -->
     <nav class="nav-bar">
       <div class="nav-logo">
-        <img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" alt="AI Lab" class="logo">
+        <img src="../assets/logo.png" alt="Logo" class="logo">
       </div>
       <div class="nav-links">
-        <a href="#" class="nav-link">{{ $t('nav.research') }}</a>
-        <a href="#" class="nav-link">{{ $t('nav.products') }}</a>
+        <PopupMenu :sections="productSections">
+          <template #trigger>
+            <a href="#" class="nav-link">{{ $t('nav.products') }}</a>
+          </template>
+        </PopupMenu>
         <a href="#" class="nav-link">{{ $t('nav.solutions') }}</a>
-        <a href="#" class="nav-link">{{ $t('nav.training') }}</a>
-        <a href="#" class="nav-link">{{ $t('nav.resources') }}</a>
-        <a href="#" class="nav-link">{{ $t('nav.aboutUs') }}</a>
+        <router-link to="/blog" class="nav-link">{{ $t('nav.blog') }}</router-link>
+        <a href="#" class="nav-link">{{ $t('nav.support') }}</a>
       </div>
       <div class="nav-actions">
-        <button class="search-btn">
-          <i class="fas fa-search"></i>
-        </button>
-        <button class="account-btn">
-          <i class="fas fa-user"></i>
-        </button>
-        <button class="try-btn" @click="$router.push('/login')">{{ $t('nav.joinResearch') }}</button>
+        <button class="search-btn">🔍</button>
+        <button class="account-btn">👤</button>
+        <button class="try-btn" @click="$router.push('/login')">{{ $t('nav.login') }}</button>
         <button class="language-btn" @click="toggleLanguage">
           {{ currentLanguage === 'zh' ? 'EN' : '中文' }}
         </button>
@@ -65,9 +63,13 @@
 <script>
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
+import PopupMenu from './PopupMenu.vue'
 
 export default {
   name: 'HelloWorld',
+  components: {
+    PopupMenu
+  },
   props: {
     msg: String
   },
@@ -80,9 +82,82 @@ export default {
       currentLanguage.value = locale.value
     }
 
+    const productSections = [
+      {
+        title: '开发工具',
+        items: [
+          {
+            name: 'WebStorm',
+            description: '智能的 JavaScript IDE',
+            icon: 'https://resources.jetbrains.com/storage/products/webstorm/img/meta/webstorm_logo_300x300.png',
+            link: '#'
+          },
+          {
+            name: 'PyCharm',
+            description: 'Python 开发者的智能选择',
+            icon: 'https://resources.jetbrains.com/storage/products/pycharm/img/meta/pycharm_logo_300x300.png',
+            link: '#'
+          },
+          {
+            name: 'IntelliJ IDEA',
+            description: '领先的 Java 开发 IDE',
+            icon: 'https://resources.jetbrains.com/storage/products/intellij-idea/img/meta/intellij-idea_logo_300x300.png',
+            link: '#'
+          }
+        ]
+      },
+      {
+        title: '云服务',
+        items: [
+          {
+            name: '云托管',
+            description: '一键部署您的应用',
+            icon: 'https://cdn-icons-png.flaticon.com/512/4413/4413569.png',
+            link: '#'
+          },
+          {
+            name: 'AI 服务',
+            description: '智能化解决方案',
+            icon: 'https://cdn-icons-png.flaticon.com/512/2103/2103832.png',
+            link: '#'
+          },
+          {
+            name: '数据分析',
+            description: '深入的数据洞察',
+            icon: 'https://cdn-icons-png.flaticon.com/512/2821/2821637.png',
+            link: '#'
+          }
+        ]
+      },
+      {
+        title: '企业服务',
+        items: [
+          {
+            name: '技术咨询',
+            description: '专业的技术支持服务',
+            icon: 'https://cdn-icons-png.flaticon.com/512/1087/1087840.png',
+            link: '#'
+          },
+          {
+            name: '培训课程',
+            description: '提升团队技术能力',
+            icon: 'https://cdn-icons-png.flaticon.com/512/2436/2436874.png',
+            link: '#'
+          },
+          {
+            name: '解决方案',
+            description: '量身定制的企业方案',
+            icon: 'https://cdn-icons-png.flaticon.com/512/3051/3051639.png',
+            link: '#'
+          }
+        ]
+      }
+    ]
+
     return {
       currentLanguage,
-      toggleLanguage
+      toggleLanguage,
+      productSections
     }
   }
 }
@@ -129,6 +204,7 @@ export default {
   font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .nav-link:hover {

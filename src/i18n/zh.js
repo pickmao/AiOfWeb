@@ -6,7 +6,10 @@ export default {
     training: '模型训练',
     resources: '资源中心',
     aboutUs: '关于我们',
-    joinResearch: '加入研究'
+    joinResearch: '加入研究',
+    login: '登录',
+    blog: '博客',
+    support: '技术支持'
   },
   hero: {
     title: 'AI研究实验室',

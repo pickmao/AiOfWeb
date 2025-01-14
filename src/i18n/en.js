@@ -5,7 +5,10 @@ export default {
     solutions: 'AI Solutions',
     training: 'Model Training',
     resources: 'Resources',
-    aboutUs: 'About Us'
+    aboutUs: 'About Us',
+    login: 'Login',
+    blog: 'Blog',
+    support: 'Support'
   },
   hero: {
     title: 'AI Research Lab',
@@ -45,5 +48,16 @@ export default {
     signIn: 'Sign In',
     noAccount: 'Don\'t have an account?',
     signUp: 'Sign Up'
+  },
+  blog: {
+    title: 'Blog',
+    subtitle: 'Stay up-to-date with the latest news and insights',
+    readMore: 'Read more'
+  },
+  support: {
+    title: 'Technical Support',
+    subtitle: 'Get help with any questions or issues',
+    contactUs: 'Contact us',
+    faq: 'FAQ'
   }
 }
