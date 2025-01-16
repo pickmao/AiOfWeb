@@ -40,7 +40,10 @@
           <div class="tags">
             <span v-for="tag in post.tags" :key="tag" class="tag">{{ tag }}</span>
           </div>
-          <router-link :to="{ name: 'BlogDetail', params: { id: post.id } }" class="read-more">
+          <router-link 
+            :to="post.category === 'langchain' ? '/blog/langchain' : { name: 'BlogDetail', params: { id: post.id } }" 
+            class="read-more"
+          >
             阅读更多
           </router-link>
         </div>

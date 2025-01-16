@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NetCoreBackend</name>
+    </assembly>
+    <members>
+        <member name="T:NetCoreBackend.Controllers.ArticleController">
+            <summary>
+            文章控制器
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Controllers.ArticleController.GetArticles">
+            <summary>
+            获取所有文章
+            </summary>
+            <returns>文章列表</returns>
+        </member>
+        <member name="M:NetCoreBackend.Controllers.ArticleController.GetArticle(System.Int32)">
+            <summary>
+            根据ID获取文章
+            </summary>
+            <param name="id">文章ID</param>
+            <returns>文章详情</returns>
+        </member>
+        <member name="M:NetCoreBackend.Controllers.ArticleController.CreateArticle(NetCoreBackend.Models.Article)">
+            <summary>
+            创建新文章
+            </summary>
+            <param name="article">文章内容</param>
+            <returns>创建的文章</returns>
+        </member>
+        <member name="M:NetCoreBackend.Controllers.ArticleController.UpdateArticle(System.Int32,NetCoreBackend.Models.Article)">
+            <summary>
+            更新文章
+            </summary>
+            <param name="id">文章ID</param>
+            <param name="article">更新的文章内容</param>
+            <returns>更新后的文章</returns>
+        </member>
+        <member name="M:NetCoreBackend.Controllers.ArticleController.DeleteArticle(System.Int32)">
+            <summary>
+            删除文章
+            </summary>
+            <param name="id">文章ID</param>
+            <returns>删除结果</returns>
+        </member>
+        <member name="T:NetCoreBackend.Database.InitDatabase">
+            <summary>
+            数据库初始化静态类
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Database.InitDatabase.EnsureCreated">
+            <summary>
+            确保数据库创建
+            </summary>
+        </member>
+        <member name="T:NetCoreBackend.Data.BlogDbContext">
+            <summary>
+            博客数据库上下文
+            </summary>
+        </member>
+        <member name="P:NetCoreBackend.Data.BlogDbContext.Articles">
+            <summary>
+            文章表
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Data.BlogDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            配置数据库连接
+            </summary>
+        </member>
+        <member name="T:NetCoreBackend.Models.Article">
+            <summary>
+            文章实体类
+            </summary>
+        </member>
+        <member name="P:NetCoreBackend.Models.Article.Id">
+            <summary>
+            文章ID
+            </summary>
+        </member>
+        <member name="P:NetCoreBackend.Models.Article.Title">
+            <summary>
+            文章标题
+            </summary>
+        </member>
+        <member name="P:NetCoreBackend.Models.Article.Content">
+            <summary>
+            文章内容（Markdown格式）
+            </summary>
+        </member>
+        <member name="P:NetCoreBackend.Models.Article.CreatedAt">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:NetCoreBackend.Models.Article.UpdatedAt">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:NetCoreBackend.Models.Article.ViewCount">
+            <summary>
+            浏览次数
+            </summary>
+        </member>
+        <member name="T:NetCoreBackend.Services.IArticleService">
+            <summary>
+            文章服务接口
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Services.IArticleService.GetAllArticlesAsync">
+            <summary>
+            获取所有文章
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Services.IArticleService.GetArticleByIdAsync(System.Int32)">
+            <summary>
+            根据ID获取文章
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Services.IArticleService.CreateArticleAsync(NetCoreBackend.Models.Article)">
+            <summary>
+            创建新文章
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Services.IArticleService.UpdateArticleAsync(System.Int32,NetCoreBackend.Models.Article)">
+            <summary>
+            更新文章
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Services.IArticleService.DeleteArticleAsync(System.Int32)">
+            <summary>
+            删除文章
+            </summary>
+        </member>
+        <member name="T:NetCoreBackend.Services.ArticleService">
+            <summary>
+            文章服务实现类
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Services.ArticleService.GetAllArticlesAsync">
+            <summary>
+            获取所有文章，按创建时间降序排序
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Services.ArticleService.GetArticleByIdAsync(System.Int32)">
+            <summary>
+            根据ID获取单个文章
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Services.ArticleService.CreateArticleAsync(NetCoreBackend.Models.Article)">
+            <summary>
+            创建新文章，自动设置创建时间和更新时间
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Services.ArticleService.UpdateArticleAsync(System.Int32,NetCoreBackend.Models.Article)">
+            <summary>
+            更新文章，自动更新修改时间
+            </summary>
+        </member>
+        <member name="M:NetCoreBackend.Services.ArticleService.DeleteArticleAsync(System.Int32)">
+            <summary>
+            删除文章
+            </summary>
+        </member>
+    </members>
+</doc>

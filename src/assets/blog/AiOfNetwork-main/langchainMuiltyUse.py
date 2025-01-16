@@ -110,7 +110,7 @@ def main():
     
     questions = [
        
-        "探测附近设备，把这个任务拆分为几个小任务，一步步做",
+        "使用nmap探测附近设备，把这个任务拆分为几个小任务，一步步做",
     ]
     
     for i, question in enumerate(questions, 1):

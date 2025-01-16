@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Mt+do19n6vcFuPDeewjarvfojQW9p5N8gVceJ2qAGJ4=",
+  "Source": "NetCoreBackend",
+  "BasePath": "_content/NetCoreBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

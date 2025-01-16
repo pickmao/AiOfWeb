@@ -3,6 +3,7 @@ import HelloWorld from '../components/HelloWorld.vue'
 import LoginPage from '../components/Login.vue'
 import Blog from '../components/Blog.vue'
 import LangChainPractice from '../views/LangChainPractice.vue'
+import LangchainBlog from '../components/LangchainBlog.vue'
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     path: '/blog',
     name: 'Blog',
     component: Blog
+  },
+  {
+    path: '/blog/langchain',
+    name: 'LangchainBlog',
+    component: LangchainBlog
   },
   {
     path: '/blog/:id',
